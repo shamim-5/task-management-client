@@ -4,6 +4,8 @@ import Calender from "./Pages/Home/Calender";
 import Completed from "./Pages/Home/Completed";
 import Home from "./Pages/Home/Home";
 import ToDo from "./Pages/Home/ToDo";
+import Registration from "./Pages/Login/Registration";
+import Login from "./Pages/Login/Login";
 import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
 
@@ -16,6 +18,8 @@ function App() {
           <Route path="/completed" element={<Completed />} />
           <Route path="/todo" element={<ToDo />} />
           <Route path="/calender" element={<Calender />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Registration />} />
         </Routes>
       </Navbar>
       <Footer />

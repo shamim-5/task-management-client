@@ -1,9 +1,10 @@
 import React from "react";
+import Tasks from "./Tasks";
 
 const Home = () => {
   return (
-    <div>
-      <h1>This is Home</h1>
+    <div className="py-12">
+      <Tasks />
     </div>
   );
 };
