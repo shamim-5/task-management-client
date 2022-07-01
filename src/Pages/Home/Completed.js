@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import Tasks from "./Tasks";
 import UseRow from "./UseRow";
 
 const Completed = () => {
@@ -10,7 +9,7 @@ const Completed = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`https://upper-pylon-87364.herokuapp.com/task/${user?.email}`)
+      fetch(`https://upper-pylon-87364.herokuapp.com/completedTask/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setCompleted(data));
     }
