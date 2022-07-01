@@ -13,7 +13,6 @@ const Registration = () => {
     const email = data.email;
     const password = data.password;
     createUserWithEmailAndPassword(email, password);
-    console.log(data);
   };
 
   if (loading) {

@@ -13,7 +13,6 @@ const Login = () => {
     const email = data.email;
     const password = data.password;
     signInWithEmailAndPassword(email, password);
-    console.log(data);
   };
 
   if (user) {

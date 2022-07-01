@@ -20,8 +20,8 @@ const Completed = () => {
       <h1 className="text-4xl font-bold text-primary text-center uppercase pb-4">
         <span>Completed tasks</span>
       </h1>
-      <div class="overflow-x-auto ">
-        <table class="table w-full">
+      <div className="overflow-x-auto ">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>

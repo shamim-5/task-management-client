@@ -26,13 +26,11 @@ const Tasks = () => {
       .then((res) => res.json())
       .then((data) => {
         toast.success("Task Added Successfully");
-        console.log(data);
       });
   };
 
   const keyboardEvents = (event) => {
     event.persist();
-    console.log(event.key);
   };
 
   return (

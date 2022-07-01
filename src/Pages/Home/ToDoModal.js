@@ -22,7 +22,6 @@ const ToDoModal = ({ userTask }) => {
       .then((res) => res.json())
       .then((data) => {
         toast.success("Task Updated");
-        console.log(data);
       });
   };
 
@@ -32,10 +31,10 @@ const ToDoModal = ({ userTask }) => {
 
   return (
     <div>
-      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-      <div class="modal">
-        <div class="modal-box relative">
-          <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2 bg-[#112829]">
+      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative">
+          <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2 bg-[#112829]">
             ✕
           </label>
           <div>
