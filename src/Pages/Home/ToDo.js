@@ -16,7 +16,7 @@ const ToDo = () => {
   }, [user]);
 
   return (
-    <div className="container">
+    <div className="container pt-16 ">
       <h1 className="text-4xl py-6 font-bold text-primary text-center uppercase">
         <span>To do Lists</span>
       </h1>

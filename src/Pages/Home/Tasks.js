@@ -36,7 +36,7 @@ const Tasks = () => {
   };
 
   return (
-    <div className="mt-12 pt-16">
+    <div className="mt-12 pt-16 text-slate-700">
       <div>
         <h1 className="text-4xl font-bold text-primary text-center uppercase">
           <span className="block">Make your time valueable</span>
@@ -57,7 +57,7 @@ const Tasks = () => {
             className="py-1 border m-1 rounded px-2 w-96 "
             type="time"
             placeholder="Time"
-            {...register("time", { required: true })}
+            {...register("time")}
           />
           <textarea
             className="py-1 border m-1 rounded px-2 w-96 h-32"

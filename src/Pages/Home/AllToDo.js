@@ -31,7 +31,7 @@ const AllToDo = ({ userTask }) => {
   };
   return (
     <div>
-      <div class="card w-92 bg-[#d3d8ea] shadow-xl">
+      <div class="card w-92 bg-neutral shadow-xl text-slate-700">
         <div class="card-body">
           <h2 class="card-title">Task: {task}</h2>
           <p>
