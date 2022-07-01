@@ -12,7 +12,7 @@ const ToDoModal = ({ userTask }) => {
       details: data.details,
     };
 
-    fetch(`http://localhost:5000/task/${_id}`, {
+    fetch(`https://upper-pylon-87364.herokuapp.com/task/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

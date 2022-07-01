@@ -10,7 +10,7 @@ const Completed = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/task/${user?.email}`)
+      fetch(`https://upper-pylon-87364.herokuapp.com/task/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setCompleted(data));
     }

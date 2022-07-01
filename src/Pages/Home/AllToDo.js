@@ -15,7 +15,7 @@ const AllToDo = ({ userTask }) => {
       time: time,
       details: details,
     };
-    fetch(`http://localhost:5000/completedTask/${id}`, {
+    fetch(`https://upper-pylon-87364.herokuapp.com/completedTask/${id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -16,7 +16,7 @@ const Tasks = () => {
       time: data.time,
       details: data.details,
     };
-    fetch(`http://localhost:5000/task`, {
+    fetch(`https://upper-pylon-87364.herokuapp.com/task`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -51,12 +51,7 @@ const Tasks = () => {
           />
 
           <input className="py-1 border m-1 rounded px-2 w-96 " type="date" {...register("date", { required: true })} />
-          <input
-            className="py-1 border m-1 rounded px-2 w-96 "
-            type="time"
-            placeholder="Time"
-            {...register("time")}
-          />
+          <input className="py-1 border m-1 rounded px-2 w-96 " type="time" placeholder="Time" {...register("time")} />
           <textarea
             className="py-1 border m-1 rounded px-2 w-96 h-32"
             type="text"
