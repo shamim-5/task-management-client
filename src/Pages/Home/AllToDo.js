@@ -1,14 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import ToDoModal from "./ToDoModal";
+import { toast } from "react-toastify";
 
 const AllToDo = ({ userTask }) => {
-  const { _id, task, date, time, details } = userTask;
-
+  const { _id, task, date, time, details, email} = userTask;
   const navigate = useNavigate();
+
   const completedTask = (id) => {
+    const completedTask = {
+      task: task,
+      email: email,
+      date: date,
+      time: time,
+      details: details,
+    };
+    fetch(`http://localhost:5000/completedTask`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(completedTask),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Task Added to Completed Task");
+        console.log(data);
+      });
     navigate("/completed");
-    console.log(id);
   };
   return (
     <div>
