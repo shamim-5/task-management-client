@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
 
-
 const Tasks = () => {
   const { register, handleSubmit } = useForm();
   const [user] = useAuthState(auth);
@@ -16,19 +15,24 @@ const Tasks = () => {
       date: data.date,
       time: data.time,
       details: data.details,
-    }
+    };
     fetch(`http://localhost:5000/task`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'content-type': 'application/json'
+        "content-type": "application/json",
       },
-      body: JSON.stringify(task)
+      body: JSON.stringify(task),
     })
       .then((res) => res.json())
       .then((data) => {
-        toast("Task Added Successfully")
-         console.log(data);
+        toast.success("Task Added Successfully");
+        console.log(data);
       });
+  };
+
+  const keyboardEvents = (event) => {
+    event.persist();
+    console.log(event.key);
   };
 
   return (
@@ -38,7 +42,7 @@ const Tasks = () => {
           <span className="block">Make your time valueable</span>
         </h1>
       </div>
-      <div className="pt-6 my-2">
+      <div className="pt-6 my-2" onKeyPress={keyboardEvents}>
         <h2 className="text-3xl text-secondary pb-2 text-center font-bold">Add task</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center">
           <input
@@ -56,9 +60,9 @@ const Tasks = () => {
             {...register("time", { required: true })}
           />
           <textarea
-            className="py-1 border m-1 rounded px-2 w-96 h-40"
+            className="py-1 border m-1 rounded px-2 w-96 h-32"
             type="text"
-            placeholder="Task Details"
+            placeholder="Task Details(Optional)"
             {...register("details")}
           />
           <input

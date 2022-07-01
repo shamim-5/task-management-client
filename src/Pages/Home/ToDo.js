@@ -15,7 +15,6 @@ const ToDo = () => {
     }
   }, [user]);
 
-  console.log(user?.email);
   return (
     <div className="container">
       <h1 className="text-4xl py-6 font-bold text-primary text-center uppercase">
