@@ -1,9 +1,35 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
+import { toast } from "react-toastify";
+
 
 const Tasks = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [user] = useAuthState(auth);
+
+  const onSubmit = (data) => {
+    const task = {
+      task: data.task,
+      email: user.email,
+      date: data.date,
+      time: data.time,
+      details: data.details,
+    }
+    fetch(`http://localhost:5000/task`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(task)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast("Task Added Successfully")
+         console.log(data);
+      });
+  };
 
   return (
     <div className="mt-12 pt-16">
@@ -22,15 +48,10 @@ const Tasks = () => {
             {...register("task", { required: true })}
           />
 
+          <input className="py-1 border m-1 rounded px-2 w-96 " type="date" {...register("date", { required: true })} />
           <input
             className="py-1 border m-1 rounded px-2 w-96 "
-            type="text"
-            placeholder="Date"
-            {...register("date", { required: true })}
-          />
-          <input
-            className="py-1 border m-1 rounded px-2 w-96 "
-            type="text"
+            type="time"
             placeholder="Time"
             {...register("time", { required: true })}
           />
@@ -38,7 +59,7 @@ const Tasks = () => {
             className="py-1 border m-1 rounded px-2 w-96 h-40"
             type="text"
             placeholder="Task Details"
-            {...register("details", { required: true })}
+            {...register("details")}
           />
           <input
             className="py-1 border font-bold text-primary bg-slate-700 m-1 rounded px-2 w-96 "

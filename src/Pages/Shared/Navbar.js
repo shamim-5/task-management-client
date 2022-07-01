@@ -58,7 +58,7 @@ const Navbar = ({ children }) => {
       <div class="drawer-content flex flex-col">
         <div class="w-full navbar bg-base-100 fixed top-0 z-50 lg:px-20">
           {pathname.includes("dashboard") && (
-            <label tabindex="0" for="my-drawer-2" class="btn btn-ghost lg:hidden ">
+            <label tabindex="0" htmlFor="my-drawer-2" class="btn btn-ghost lg:hidden ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -72,11 +72,13 @@ const Navbar = ({ children }) => {
           )}
           <div class="flex-1 px-2 mx-2">
             {" "}
-            <h1 className="flex-1 lg:text-4xl text-2xl font-semibold text-[#2b7a8a] uppercase">Task Management</h1>
+            <Link to="/">
+              <h1 className="flex-1 lg:text-4xl text-2xl font-semibold text-[#2b7a8a] uppercase">Task Management</h1>
+            </Link>
           </div>
 
           <div class="flex-none lg:hidden">
-            <label for="my-drawer-3" class="btn btn-square btn-ghost">
+            <label htmlFor="my-drawer-3" class="btn btn-square btn-ghost">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -114,7 +116,7 @@ const Navbar = ({ children }) => {
         {children}
       </div>
       <div class="drawer-side">
-        <label for="my-drawer-3" class="drawer-overlay"></label>
+        <label htmlFor="my-drawer-3" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">{menuItems}</ul>
       </div>
     </div>

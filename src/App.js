@@ -8,6 +8,8 @@ import Registration from "./Pages/Login/Registration";
 import Login from "./Pages/Login/Login";
 import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -21,8 +23,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Registration />} />
         </Routes>
+        <Footer />
       </Navbar>
-      <Footer />
+      <ToastContainer />
     </div>
   );
 }
