@@ -3,7 +3,7 @@ import Tasks from "./Tasks";
 
 const Home = () => {
   return (
-    <div className="mt-4">
+    <div className="">
       <Tasks />
     </div>
   );

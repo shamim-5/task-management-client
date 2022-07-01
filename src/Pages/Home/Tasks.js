@@ -6,7 +6,7 @@ const Tasks = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div>
+    <div className="mt-12 pt-16">
       <div>
         <h1 className="text-4xl font-bold text-primary text-center uppercase">
           <span className="block">Make your time valueable</span>

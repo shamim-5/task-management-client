@@ -22,7 +22,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="pt-12 my-2">
+      <div className="mt-12 pt-16">
         <h2 className="text-3xl text-secondary pb-2 text-center font-bold">Login Form</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center">
           <input
